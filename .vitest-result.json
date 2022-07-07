@@ -1,0 +1,37 @@
+{
+  "numTotalTestSuites": 2,
+  "numPassedTestSuites": 2,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 1,
+  "numPassedTests": 0,
+  "numFailedTests": 1,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "startTime": 1657231580554,
+  "success": false,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Show message"
+          ],
+          "fullName": " Show message should show message",
+          "status": "failed",
+          "title": "should show message",
+          "duration": 23,
+          "failureMessages": [
+            "Unable to find an element with the text: /Hello world/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, <script />, <style />\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<router-view />\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ]
+        }
+      ],
+      "startTime": 1657231581904,
+      "endTime": 1657231581927,
+      "status": "failed",
+      "message": "",
+      "name": "C:/Users/Alexander/Documents/Proyectos/todo-app/src/app.spec.ts"
+    }
+  ]
+}
