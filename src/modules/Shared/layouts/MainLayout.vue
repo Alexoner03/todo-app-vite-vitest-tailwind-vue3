@@ -1,19 +1,21 @@
 <script setup>
-import Sidebar from "../components/sidebar.vue"
+import Sidebar from "../components/Sidebar.vue"
+import Navbar from "../components/Navbar.vue"
 </script>
 
 <template>
   <div class="w-full h-screen relative">
-    <div class="wrapper-style">
-      <!--sidebar-->
-      <div class="w-3/12">
-        <sidebar></sidebar>
-      </div>
 
-      <!--content-->
-      <main class="w-9/12 p-8">
+    <div class="drawer">
+      <input id="my-drawer-3" type="checkbox" class="drawer-toggle"/>
+      <div class="drawer-content flex flex-col">
+        <!-- Navbar -->
+        <navbar/>
+        <!-- Page content here -->
         <slot></slot>
-      </main>
+      </div>
+      <!--sidebar-->
+      <sidebar/>
     </div>
 
     <!--footer-->
@@ -25,10 +27,6 @@ import Sidebar from "../components/sidebar.vue"
 
 <style scoped>
 .footer-style {
-  @apply text-center text-white py-4 bottom-0 absolute w-full bg-black bg-opacity-20
-}
-
-.wrapper-style {
-  @apply flex w-full h-full overflow-y-auto bg-gradient-to-bl from-indigo-700 to-purple-900
+  @apply text-center text-white py-4 bottom-0 absolute w-full bg-neutral bg-opacity-20
 }
 </style>

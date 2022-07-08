@@ -5,16 +5,16 @@ interface ButtonProps {
 
 defineProps<ButtonProps>()
 
+const emit = defineEmits<{
+  (e: 'click'): void
+}>()
+
+const onClick = () => emit('click')
+
 </script>
 
 <template>
-  <button :class="[className ?? 'button-style']">
+  <button :class="[className ?? 'btn btn-primary']" @click="onClick">
     <slot></slot>
   </button>
 </template>
-
-<style scoped>
-.button-style {
-  @apply bg-white p-2 rounded hover:bg-opacity-75 transition-all duration-75
-}
-</style>
