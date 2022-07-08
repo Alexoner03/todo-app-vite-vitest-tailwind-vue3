@@ -1,56 +1,40 @@
 <script setup lang="ts">
 import Task from "../entities/Task.entity";
+import {State} from "../entities/enums.d"
 
 interface TaskItemProps {
-  task : Task
+  task: Task
 }
 
 interface TaskItemEmits {
-  (e: 'onClose', task: Task): void,
-  (e: 'onActive', task: Task): void,
+  (e: 'onToggle', task: Task): void,
+
   (e: 'onDeleted', task: Task): void,
 }
 
 const props = defineProps<TaskItemProps>()
 const emit = defineEmits<TaskItemEmits>()
 
-const onClose = () => emit('onClose', props.task);
-const onActive = () => emit('onActive', props.task);
+const onToggle = () => emit('onToggle', props.task);
 const onDeleted = () => emit('onDeleted', props.task);
 
 </script>
 
 <template>
-  <div class="task-style">
-    <span class="task-name">{{ task.name }}</span>
-    <span>{{ task.date.toDateString() }}</span>
-    <span>{{ task.state }}</span>
-    <span>{{ task.importance }}</span>
-    <div class="text-sm buttons mt-4">
-      <button @click="onClose">
-        Terminar
-      </button>
-      |
-      <button @click="onActive">
-        Activar
-      </button>
-      |
-      <button @click="onDeleted">
-        Eliminar
-      </button>
+  <div class="card w-96 bg-primary shadow-xl">
+    <figure>
+      <span class="text-4xl py-4 font-black">{{ task.title }}</span>
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">{{ task.date.toDateString() }}</h2>
+      <p>{{ task.description }}</p>
+      <p>Importancia: <span class="float-right">{{ task.importance }}</span></p>
+      <div class="card-actions justify-end mt-4">
+        <button class="btn btn-sm btn-secondary" @click="onToggle">
+          {{ task.state === State.ACTIVE ? 'Terminar' : 'Empezar' }}
+        </button>
+        <button class="btn btn-sm btn-secondary" @click="onDeleted">Eliminar</button>
+      </div>
     </div>
   </div>
 </template>
-<style scoped>
-.task-style {
-  @apply bg-white bg-opacity-50 w-64 h-64 rounded flex justify-center items-center flex-col
-}
-
-.task-name {
-  @apply font-black text-2xl underline mb-2
-}
-
-.buttons button {
-  @apply bg-white rounded px-1 hover:bg-opacity-50
-}
-</style>

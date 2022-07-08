@@ -1,6 +1,6 @@
 import {render, screen, waitFor} from "@testing-library/vue";
 import "@testing-library/jest-dom"
-import Index from '../pages/index.vue'
+import Index from '../pages/Index.vue'
 import {TaskRepository} from "@/modules/Task/services/task.repository";
 import {Importance, State} from "@/modules/Task/entities/enums.d";
 import {beforeEach} from "vitest";

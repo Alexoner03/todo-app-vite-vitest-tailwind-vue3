@@ -10,7 +10,7 @@ const taskRoutes: RouteRecordRaw = {
     children: [
         {
             path: "",
-            component: () => import('./pages/index.vue'),
+            component: () => import('./pages/Index.vue'),
             props : {
                 taskRepository
             }

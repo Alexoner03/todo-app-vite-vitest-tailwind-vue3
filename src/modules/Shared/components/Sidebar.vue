@@ -2,7 +2,7 @@
   <div class="drawer-side">
     <label for="my-drawer-3" class="drawer-overlay"></label>
     <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
-      <li class="">
+      <li class="text-2xl font-black animate-pulse">
         <span>Utility APP</span>
       </li>
       <hr class="mb-4"/>

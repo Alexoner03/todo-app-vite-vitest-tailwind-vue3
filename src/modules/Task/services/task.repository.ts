@@ -5,7 +5,8 @@ export class TaskRepository {
     async getTasks(): Promise<Task[]> {
         return Promise.resolve([
             {
-                name: "Task 1",
+                title: "Task 1",
+                description : "lorem",
                 state: State.ACTIVE,
                 importance: Importance.HIGH,
                 date: new Date()

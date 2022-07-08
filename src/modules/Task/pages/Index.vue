@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import ActionButton from "@/modules/Shared/components/ActionButton.vue"
+import {ref} from "vue";
 import TaskItem from "../components/TaskItem.vue"
 import TaskEntity from "../entities/Task.entity";
-import {ref} from "vue";
-import {TaskRepository} from "@/modules/Task/services/task.repository";
+import {TaskRepository} from "../services/task.repository";
 
 
 const props = defineProps<{
@@ -24,13 +23,13 @@ loadTasks()
 </script>
 
 <template>
-  <div class="w-full">
-    <div class="mb-4">
-      <action-button class="mr-4">Crear Tarea</action-button>
+  <div class="w-full p-8">
+    <div class="mb-8">
+      <button class="btn btn-primary mr-4">Crear Tarea</button>
     </div>
 
     <div class="flex">
-      <task-item :task="task" v-for="(task, index) in tasks" :key="index"></task-item>
+      <task-item :task="task" v-for="(task, index) in tasks" :key="index"/>
     </div>
   </div>
 </template>
